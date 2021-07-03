@@ -55,7 +55,7 @@ async def on_ready():
 ```
 What happens whenever the bot starts
 
-![](/images/yes.png)
+![bot online](/images/bot_online.png)
 
 ```py
 @client.command()
@@ -83,3 +83,6 @@ async def embed(ctx):
 `embed = discord.Embed` = Defining embed (needed!)
 
 `(title = ccfg.Example_Embed_Title, description = ccfg.Example_Embed_Title, color = 0x5865f2)` = title (configurable in ![commands config](commands_config.py)) and description (configurable in ![commands config](commands_config.py)) and the colors hexadecimal code (hex code), [if you want to find the hex code of your favorite color go here](https://imagecolorpicker.com/color-code/5865f2) `await ctx.send(embed = embed)` sending the embed
+
+### Everything added
+![bot online](/images/all_stuff_so_far.png)
