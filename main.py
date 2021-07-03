@@ -1,8 +1,9 @@
 import discord
 from discord.ext import commands
-import config
+import config, commands_config
 import os
 
+ccfg = commands_config
 cfg = config
 
 client = commands.Bot(command_prefix = cfg.BOT_PREFIX)
@@ -24,19 +25,12 @@ async def test(ctx):
 async def ping(ctx):
     ping = int(round(client.latency, 3) * 1000)
     await ctx.send(f'{ctx.author.mention} {ping} ms.')
-# pingme command
-@client.command()
-async def pingme(ctx):
-    await ctx.send(f'{ctx.author.mention} get pinged <:h_:840397056194772993>')
 
-# Help cmd
-client.remove_command('help')
 @client.command()
-async def help(ctx):
-    embed = discord.Embed(title = 'help', description = f'Made by <@{cfg.ownerid}>', color = discord.Color.blurple())
-    embed.add_field(name = 'Commands:', value=(f'{cfg.BOT_PREFIX)}test,{cfg.BOT_PREFIX)}ping, {cfg.BOT_PREFIX)}pingme(just in case you want to)')
-    embed.add_field(name = 'Prefix', value = (cfg.BOT_PREFIX))
-    await ctx.send(embed = embed)
+async def embed(ctx):
+    embed = discord.Embed(title = ccfg.Example_Embed_Title, description = ccfg.Example_Embed_Title, color = 0x5865f2) # blurple hex code
+    embed.add_field(name = ccfg.Embed_Name_1, value = (ccfg.Embed_Text_1))
+    embed.add_field(name = ccfg.Embed_Name_2, value = (ccfg.Embed_Text_2))
 
 # Makes the bot run
 client.run(os.environ['TOKEN'])
