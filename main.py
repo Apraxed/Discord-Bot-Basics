@@ -8,7 +8,6 @@ cfg = config
 
 client = commands.Bot(command_prefix = cfg.BOT_PREFIX)
 
-
 @client.event
 async def on_ready():
     print(client.user.name, 'is online')
