@@ -4,34 +4,28 @@ Discord Bot Basics
 =
 A beginners guide to [discord.py](https://github.com/Rapptz/discord.py) by [Danny (aka Rapptz)](https://github.com/Rapptz)
 
+([click this for the 1-file version](https://pastebin.com/raw/nqAE8ye1))
+
 The code itself
 -
-### discord.py has 2 main "Bot Types"
 
-- `bot`
-- `client`
-
-No diffrence other than:
-- Client `client.run("BOT_TOKEN")` Bot `bot.run("BOT_TOKEN")` 
-- Client `@client.command` Bot `@bot.command`
-- Client `@client.event` Bot `@bot.event`
-
-This template uses `client` rather then `bot`
-=
 ## STEPS TO GET THE BOT TO RUN
 
 ### Make sure to get Python 3.5 or higher
 This is required to actually run the bot.
 
 ### Install dependencies
-This is pip install -U -r requirements.txt
+
+run `pip install -U -r requirements.txt` in a shell window
+
+or run `pip install discord.py`
 
 ## What everything means
 
 ```py
 import discord
 from discord.ext import commands
-import config
+import config, commands_config
 import os
 ``` 
 General imports for everything
@@ -40,6 +34,11 @@ General imports for everything
 cfg = config
 ```
 Making it so you can do `cfg.` rather than `config.`
+
+```py
+ccfg = commands_config
+```
+Making it so that you can do `ccfg.` rather then `commands_config.`
 
 ```py
 client = commands.Bot(command_prefix = cfg.BOT_PREFIX)
